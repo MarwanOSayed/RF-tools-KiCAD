@@ -6,6 +6,8 @@
 # Based 
 # on Teardrops for PCBNEW by Niluje 2019 thewireddoesntexist.org
 # on kicad Toolbox vy aschaller 
+#
+# Fixed by MarwanOSayed for KICAD V9
 
 import wx
 import pcbnew

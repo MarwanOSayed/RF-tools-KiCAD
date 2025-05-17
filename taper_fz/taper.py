@@ -6,6 +6,8 @@
 # Based 
 # on Teardrops for PCBNEW by Niluje 2019 thewireddoesntexist.org
 # on kicad Toolbox vy aschaller 
+#
+# Fixed by MarwanOSayed for KICAD V9
 
 import os
 import sys
@@ -46,9 +48,11 @@ def __Zone(board, points, track):
     if hasattr(pcbnew, 'ZONE_CONTAINER'): # kv5
         z = ZONE_CONTAINER(board)
         z.SetZoneClearance(track.GetClearance())
-    else: # kv6
+    else: # kv9
         z = ZONE(board)
-        z.SetLocalClearance(track.GetLocalClearance(track.GetClass()))
+        #z.SetLocalClearance(track.GetLocalClearance(track.GetClass()))
+        z.SetLocalClearance(0)
+        
     # Add zone properties
     z.SetLayer(track.GetLayer())
     z.SetNetCode(track.GetNetCode())
